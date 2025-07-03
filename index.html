@@ -19,12 +19,23 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    position: relative;
+    overflow: hidden;
   }
 
   @keyframes backgroundSlide {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
+  }
+
+  .blob-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
   }
 
   .bio-container {
@@ -35,6 +46,8 @@
     padding: 30px 40px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
     animation: fadeIn 1.2s ease forwards;
+    z-index: 1;
+    position: relative;
   }
 
   h1 {
@@ -88,6 +101,39 @@
 </style>
 </head>
 <body>
+  <!-- Gooey Blob Background -->
+  <div class="blob-bg">
+    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur" />
+          <feColorMatrix in="blur" mode="matrix"
+            values="1 0 0 0 0  
+                    0 1 0 0 0  
+                    0 0 1 0 0  
+                    0 0 0 30 -10" result="goo" />
+          <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+        </filter>
+      </defs>
+
+      <g filter="url(#goo)" fill="white" opacity="0.08">
+        <circle cx="400" cy="300" r="120">
+          <animate attributeName="r" values="120;140;120" dur="8s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="500" cy="280" r="90">
+          <animate attributeName="cy" values="280;300;280" dur="10s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="300" cy="350" r="80">
+          <animate attributeName="cx" values="300;320;300" dur="9s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="450" cy="400" r="100">
+          <animate attributeName="r" values="100;120;100" dur="7s" repeatCount="indefinite" />
+        </circle>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Bio Content -->
   <div class="bio-container">
     <h1>bio</h1>
     <div class="line">my telegram: <a href="https://t.me/fuckhoodi" target="_blank">click</a></div>
