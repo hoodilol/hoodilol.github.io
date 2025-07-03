@@ -19,23 +19,12 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    position: relative;
-    overflow: hidden;
   }
 
   @keyframes backgroundSlide {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
-  }
-
-  .blob-bg {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
   }
 
   .bio-container {
@@ -46,8 +35,6 @@
     padding: 30px 40px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
     animation: fadeIn 1.2s ease forwards;
-    z-index: 1;
-    position: relative;
   }
 
   h1 {
@@ -101,80 +88,6 @@
 </style>
 </head>
 <body>
-  <div class="blob-bg">
-    <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-      <g stroke="white" stroke-width="2" fill="none" opacity="0.2">
-        
-        <path>
-          <animate attributeName="d" dur="12s" repeatCount="indefinite"
-            values="
-              M421,289Q403,328,368,346Q333,364,301,337Q269,310,262,275Q255,240,286,206Q317,172,356,186Q395,200,419,235Q443,270,421,289Z;
-              M411,275Q392,315,360,336Q328,357,291,332Q254,307,248,270Q242,233,279,203Q316,173,354,186Q392,199,412,234Q432,269,411,275Z;
-              M421,289Q403,328,368,346Q333,364,301,337Q269,310,262,275Q255,240,286,206Q317,172,356,186Q395,200,419,235Q443,270,421,289Z
-            " />
-        </path>
-
-        
-        <path transform="translate(200,100) scale(0.7)">
-          <animate attributeName="d" dur="14s" repeatCount="indefinite"
-            values="
-              M100,100Q120,130,90,150Q60,170,40,140Q20,110,40,80Q60,50,90,70Q120,90,100,100Z;
-              M100,100Q130,120,110,150Q90,180,60,160Q30,140,40,100Q50,60,80,60Q110,60,100,100Z;
-              M100,100Q120,130,90,150Q60,170,40,140Q20,110,40,80Q60,50,90,70Q120,90,100,100Z
-            " />
-        </path>
-
-        
-        <path transform="translate(500,400) scale(1.2)">
-          <animate attributeName="d" dur="13s" repeatCount="indefinite"
-            values="
-              M120,110Q140,140,110,170Q80,200,50,170Q20,140,40,110Q60,80,90,90Q120,100,120,110Z;
-              M110,120Q130,150,100,180Q70,210,50,180Q30,150,50,120Q70,90,100,100Q130,110,110,120Z;
-              M120,110Q140,140,110,170Q80,200,50,170Q20,140,40,110Q60,80,90,90Q120,100,120,110Z
-            " />
-        </path>
-
-        
-        <path transform="translate(150,400) scale(0.8)">
-          <animate attributeName="d" dur="11s" repeatCount="indefinite"
-            values="
-              M90,90Q110,120,80,140Q50,160,30,130Q10,100,30,70Q50,40,80,60Q110,80,90,90Z;
-              M100,100Q120,130,90,150Q60,170,40,140Q20,110,40,80Q60,50,90,70Q120,90,100,100Z;
-              M90,90Q110,120,80,140Q50,160,30,130Q10,100,30,70Q50,40,80,60Q110,80,90,90Z
-            " />
-        </path>
-
-      
-        <path transform="translate(600,100) scale(1)">
-          <animate attributeName="d" dur="10s" repeatCount="indefinite"
-            values="
-              M100,100Q130,130,110,160Q90,190,60,170Q30,150,40,110Q50,70,80,80Q110,90,100,100Z;
-              M110,110Q140,140,120,170Q100,200,70,180Q40,160,50,120Q60,80,90,90Q120,100,110,110Z;
-              M100,100Q130,130,110,160Q90,190,60,170Q30,150,40,110Q50,70,80,80Q110,90,100,100Z
-            " />
-        </path>
-
-        <path transform="translate(300,50) scale(0.6)">
-          <animate attributeName="d" dur="12s" repeatCount="indefinite"
-            values="
-              M80,80Q100,110,70,130Q40,150,20,120Q0,90,20,60Q40,30,70,50Q100,70,80,80Z;
-              M70,90Q90,120,60,140Q30,160,10,130Q-10,100,10,70Q30,40,60,60Q90,80,70,90Z;
-              M80,80Q100,110,70,130Q40,150,20,120Q0,90,20,60Q40,30,70,50Q100,70,80,80Z
-            " />
-        </path>
-
-        <path transform="translate(650,300) scale(0.9)">
-          <animate attributeName="d" dur="13s" repeatCount="indefinite"
-            values="
-              M90,100Q120,120,100,150Q80,180,50,160Q20,140,30,100Q40,60,70,70Q100,80,90,100Z;
-              M100,110Q130,130,110,160Q90,190,60,170Q30,150,40,110Q50,70,80,80Q110,90,100,110Z;
-              M90,100Q120,120,100,150Q80,180,50,160Q20,140,30,100Q40,60,70,70Q100,80,90,100Z
-            " />
-        </path>
-      </g>
-    </svg>
-  </div>
-  
   <div class="bio-container">
     <h1>bio</h1>
     <div class="line">my telegram: <a href="https://t.me/fuckhoodi" target="_blank">click</a></div>
