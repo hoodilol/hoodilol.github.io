@@ -101,22 +101,16 @@
 </style>
 </head>
 <body>
-  <!-- Gooey Blob Background -->
+  <!-- Gooey Blob Outlined Background -->
   <div class="blob-bg">
     <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
       <defs>
         <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="30" result="blur" />
-          <feColorMatrix in="blur" mode="matrix"
-            values="1 0 0 0 0  
-                    0 1 0 0 0  
-                    0 0 1 0 0  
-                    0 0 0 30 -10" result="goo" />
-          <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+          <feGaussianBlur in="SourceGraphic" stdDeviation="0" result="blur" />
         </filter>
       </defs>
 
-      <g filter="url(#goo)" fill="white" opacity="0.08">
+      <g stroke="white" stroke-width="2" fill="none" opacity="0.2">
         <circle cx="400" cy="300" r="120">
           <animate attributeName="r" values="120;140;120" dur="8s" repeatCount="indefinite" />
         </circle>
@@ -128,6 +122,15 @@
         </circle>
         <circle cx="450" cy="400" r="100">
           <animate attributeName="r" values="100;120;100" dur="7s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="600" cy="200" r="70">
+          <animate attributeName="r" values="70;90;70" dur="11s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="250" cy="250" r="60">
+          <animate attributeName="cy" values="250;270;250" dur="10s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="350" cy="150" r="75">
+          <animate attributeName="r" values="75;95;75" dur="12s" repeatCount="indefinite" />
         </circle>
       </g>
     </svg>
