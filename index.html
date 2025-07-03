@@ -9,7 +9,9 @@
 
   body {
     margin: 0;
-    background: linear-gradient(120deg, #1f1c2c, #928dab);
+    background: linear-gradient(-45deg, #1f1f1f, #3a3a3a, #666, #1f1f1f);
+    background-size: 400% 400%;
+    animation: backgroundSlide 15s ease infinite;
     font-family: 'Montserrat', sans-serif;
     color: #eee;
     display: flex;
@@ -17,6 +19,12 @@
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+  }
+
+  @keyframes backgroundSlide {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
   }
 
   .bio-container {
@@ -35,7 +43,14 @@
     color: #ff6f91;
     margin-bottom: 15px;
     letter-spacing: 3px;
-    animation: slideInFromLeft 1s ease forwards;
+    animation: slideInFromLeft 1s ease forwards, colorCycle 6s ease-in-out infinite;
+  }
+
+  @keyframes colorCycle {
+    0% { color: red; }
+    33% { color: blue; }
+    66% { color: gray; }
+    100% { color: red; }
   }
 
   .line {
